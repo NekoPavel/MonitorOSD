@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace MonitorOSD
 {
-    // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse); 
     public class MonitoringLookup
     {
         public string id { get; set; }

@@ -7,19 +7,34 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MonitorOSD
 {
-    public partial class Form1 : Form
+    public partial class MonitorOSD : Form
     {
-        public Form1()
+        public MonitorOSD()
         {
             InitializeComponent();
+
         }
         //http://sysman.sll.se/SysMan/api/monitoring?target=LITLS13395850
-        static string NetResponseToString(string uriString)
+        public MonitoringLookup GetOSDInfo(string pcName)
+        {
+            MonitoringLookup[] monitoringArray = JsonSerializer.Deserialize<MonitoringLookup[]>(NetResponseToString("http://sysman.sll.se/SysMan/api/monitoring?target=" + pcName));
+            if (monitoringArray.Length > 0)
+            {
+                return monitoringArray[0];
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public string NetResponseToString(string uriString)
         {
             Uri uri = new Uri(uriString);
             WebRequest webRequest = WebRequest.Create(uri);

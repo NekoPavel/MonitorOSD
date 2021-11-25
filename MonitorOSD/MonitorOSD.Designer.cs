@@ -1,7 +1,7 @@
 ﻿
 namespace MonitorOSD
 {
-    partial class Form1
+    partial class MonitorOSD
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,19 @@ namespace MonitorOSD
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // MonitorOSD
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(244)))), ((int)(((byte)(255)))));
+            this.Name = "MonitorOSD";
+            this.Text = "MonitorOSD";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
